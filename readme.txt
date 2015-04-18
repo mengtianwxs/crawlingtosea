@@ -1,0 +1,1 @@
+这是一个Actionscript3工具类库.里面整合了box2d.使用之时需要另外增加flashbox2d类库文件.
