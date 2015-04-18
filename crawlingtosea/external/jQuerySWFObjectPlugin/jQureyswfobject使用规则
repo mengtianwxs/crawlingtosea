@@ -1,0 +1,24 @@
+1.基本的使用方法：
+
+HTML 部分
+<div id="myFlash">    The "You don't have flash" message.Or any other backup content.</div>JavaScript 部分
+
+<script type="text/javascript">$(document).ready(    function() {        $('#myFlash').flash('fireworks.swf');    });</script>
+
+2.高级使用方法（可传递参数、变量、属性）：
+
+HTML 部分
+<div id="myFlashVars"></div>JavaScript 部分
+
+<script type="text/javascript">$(document).ready(    
+function () {        $('#myFlashVars').flash(            
+{                // 传入 flash url                
+swf: 'test_flashvars.swf',               
+ // 传值                 
+ 
+  flashvars: {                   
+   name1: 'jQuery',                  
+     name2: 'SWFObject',                 
+        name3: 'Plugin'                }            }        );    });</script>
+
+  

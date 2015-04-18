@@ -1,0 +1,19 @@
+swfobject.embedSWF("FlashContent.swf", "myContent", "550", "400", "9.0.0", "expressInstall.swf",flashvars,params,attributes);
+
+var flashvars={
+name1:"hello",
+name2:"world",
+name3:"foobar"
+};
+var params={
+menu:"false"
+};
+var attributes={
+id:"mengtianwxs",
+name:"myDynamicContent"
+};
+
+--------------------------------------------------
+
+var flashvars={};
+flashvars.name1="hello";
