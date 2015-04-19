@@ -1,5 +1,8 @@
 package crawlingtosea.box2d.core
 {
+	import avmplus.getQualifiedClassName;
+	
+	import crawlingtosea.debug.Debug;
 	
 	/**
 	 *
@@ -17,6 +20,9 @@ package crawlingtosea.box2d.core
 		
 		public function CS_CV()
 		{
+			if(getQualifiedClassName(this)=="crawlingtosea.box2d.core::CS_CV"){
+				throw new Error(Debug.Error_CannotInstance);
+			}
 		}
 	}
 }

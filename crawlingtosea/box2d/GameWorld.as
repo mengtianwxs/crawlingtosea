@@ -19,7 +19,7 @@
 	 */
 	public class GameWorld extends Sprite 
 	{
-		private var worldScale:Number = 30;
+		private const worldScale:Number = 30;
 		private var world:b2World;
 		private var isDebugDraw:Boolean=false;
 		private var isRenderSkin:Boolean=false;
