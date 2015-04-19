@@ -115,7 +115,7 @@
 			var shape4:b2PolygonShape=b2PolygonShape.AsOrientedBox(_sw/2/worldScale,_w/2/worldScale,vec4);
 			shapeVec.push(shape4);
 			
-			trace(shapeVec.length);
+//			trace(shapeVec.length);
 			for(var i:int=0;i<=(shapeVec.length-1);i++){
 				b2fixture.shape=shapeVec[i];
 				b2body.CreateFixture(b2fixture);
