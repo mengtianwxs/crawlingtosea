@@ -29,6 +29,7 @@
 		
 		public function GameWorld(isRender:Boolean=true,isDebug:Boolean=false) 
 		{
+			trace("this is older class,pls use csb2world");
 			world = new b2World(new b2Vec2(0, 10), true);
 			if (isRender) {
 				addEventListener(Event.ENTER_FRAME, render);
