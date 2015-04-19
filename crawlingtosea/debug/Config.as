@@ -146,6 +146,8 @@ package crawlingtosea.debug
 		private static var _SH:Number;
 		
 		private static var _methods:Array;
+		
+		public static var isInit:Boolean=false;
 	
 		public function Config()
 		{
@@ -217,10 +219,11 @@ package crawlingtosea.debug
 		 * 
 		 */	
 		
-		public static function init(rootClass:Object=null,stage:Stage=null,frameRate:uint=30,isNoScale:Boolean=true,isUseDecimal:Boolean=false,isUseCodePage:Boolean=true):void
+		public static function init(rootClass:Object=null,stage:Stage=null,frameRate:uint=30,isNoScale:Boolean=true,isUseDecimal:Boolean=false,isUseCodePage:Boolean=true):Boolean
 		{
 			//隐藏stage中的菜单
 			
+		   
 			_rootClass=rootClass;
 			_stage=stage;
 			_stage.align=Config.StageAlign_TopLeft;
@@ -240,6 +243,8 @@ package crawlingtosea.debug
 				_halfSH=_stage.stageHeight>>1;
 				_halfSW=_stage.stageWidth>>1; 
 			}			
+			
+			return isInit=stage?true:false;
 		}
 		
 		/**

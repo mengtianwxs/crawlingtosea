@@ -23,6 +23,7 @@ package crawlingtosea.debug
 		public static const Error_IOIsWrong:String="『海之枨云』§* 引用数据路径出现错误 *§";
 		public static const Error_LoaderIsNull:String="『海之枨云』§* loader对象不能为空 *§";
 		public static const Error_FunctionIsNull:String="『海之枨云』§* 函数对象不能为空 *§";
+		public static const Error_DebugConfigIsClosed:String="『海之枨云』§* 没有对config类进行初始化操作 *§";;
 		
 		public function Debug()
 		{
