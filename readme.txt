@@ -1,4 +1,4 @@
-﻿这是一个Actionscript3工具类库。它整合了flashbox2d，使用之时需要另外增加flashbox2d类库文件。它的中文名是海之枨。
+﻿@mengtianwxs this is a Actionscript3 tool lib .it has flashbox2d.
 @dev this is a new branch.
 @mengtianwxs this is a new author.
 @mengtianwxs new update.
