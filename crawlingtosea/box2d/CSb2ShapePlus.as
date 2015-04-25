@@ -1,4 +1,4 @@
-package crawlingtosea.box2d
+﻿package crawlingtosea.box2d
 {
 	import flash.display.Sprite;
 	
@@ -38,10 +38,32 @@ package crawlingtosea.box2d
 			polygonShape.SetAsBox(w / 2 / CSb2CV.WS, h / 2 / CSb2CV.WS);
 			var fixtureDef:b2FixtureDef = new b2FixtureDef();
 			fixtureDef.shape = polygonShape;
+//			fixtureDef.density=2;
 			
 			var b2body:b2Body = world.CreateBody(bodyDef);
 			b2body.CreateFixture(fixtureDef);
 			return b2body;
+		}
+		
+		public function Resetb2FixtureByName(s:String="",b2fd:b2FixtureDef=null):void
+		{
+			
+			if((s!="")&&(b2fd!=null))
+			{
+				for (var b:b2Body = world.GetBodyList(); b; b = b.GetNext())
+				{
+					
+					if(b.GetUserData().name==s){
+						
+//						b.GetFixtureList().SetFriction(b2fd.friction);
+//						b.GetFixtureList().SetRestitution(b2fd.restitution);
+						b.GetFixtureList().SetDensity(b2fd.density);
+						/*b.GetFixtureList().SetSensor(b2fd.isSensor);
+						b.GetFixtureList().SetFilterData(b2fd.filter);*/
+						b.ResetMassData();
+					}
+				}
+			}
 		}
 	}
 }

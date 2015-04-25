@@ -12,6 +12,7 @@ package crawlingtosea.box2d
 	import Box2D.Dynamics.b2World;
 	
 	import crawlingtosea.box2d.core.CSb2CV;
+	import crawlingtosea.debug.Config;
 		
 
 	public class CSb2World
@@ -39,9 +40,21 @@ package crawlingtosea.box2d
 			return null;
 			
 		}
-		public function registerContainer(s:Sprite):void
+		
+		
+		public function registerAndStartRender(s:Sprite=null,isRenderSkin:Boolean=false):void{
+			registerContainer(s);
+			startRender(isRenderSkin);
+			
+		}
+		public function registerContainer(s:Sprite=null):void
 		{
-			debugSprite=s;
+			if(s==null&&Config.isInit){
+			   debugSprite=Config.Container;
+			}
+			else{
+			   debugSprite=s;
+			}
 			isRegister=debugSprite?true:false;
 			
 		}

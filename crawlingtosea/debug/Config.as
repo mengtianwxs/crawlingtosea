@@ -2,6 +2,7 @@ package crawlingtosea.debug
 {
 	import flash.display.FrameLabel;
 	import flash.display.MovieClip;
+	import flash.display.Sprite;
 	import flash.display.Stage;
 	import flash.events.ContextMenuEvent;
 	import flash.net.URLRequest;
@@ -245,6 +246,17 @@ package crawlingtosea.debug
 			}			
 			
 			return isInit=stage?true:false;
+		}
+		
+		public static function get Container():Sprite{
+			
+			if(Config)
+			{
+				var s:Sprite=new Sprite();
+				Config.stage.addChild(s);
+				return s;
+			}
+			return null;
 		}
 		
 		/**
