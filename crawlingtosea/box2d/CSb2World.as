@@ -3,6 +3,7 @@ package crawlingtosea.box2d
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.utils.Dictionary;
 	
 	import Box2D.Common.Math.b2Vec2;
 	import Box2D.Dynamics.b2Body;
@@ -24,6 +25,10 @@ package crawlingtosea.box2d
 		private var isRegister:Boolean=false;
 		private var isRender:Boolean=false;
 		private var _isRenderSkin:Boolean=false;
+		private var _isForce:Boolean=false;
+		private var _vec_body:Vector.<b2Body>=new Vector.<b2Body>();
+		private var _vec_force:Vector.<b2Vec2>=new Vector.<b2Vec2>();
+		private var _vec_bodyname:Vector.<String>=new Vector.<String>();
 		
 		public function CSb2World(_x:Number=0,_y:Number=10)
 		{
@@ -41,6 +46,24 @@ package crawlingtosea.box2d
 			
 		}
 		
+		public function pushForceToBody(force:b2Vec2,body:String=""):void{
+			if(body!=""){
+				var b:b2Body=getBodyByName(body);
+				if(b!=null){
+					_isForce=true;
+					_vec_body.push(b);
+					_vec_bodyname.push(body);
+					_vec_force.push(force);
+						
+				}
+			}
+		}
+		
+		protected function getNumByName(s:String=""):int{
+			trace(_vec_bodyname.indexOf(s));
+			return _vec_bodyname.indexOf(s);
+		}
+		 
 		
 		public function registerAndStartRender(s:Sprite=null,isRenderSkin:Boolean=false):void{
 			registerContainer(s);
@@ -99,6 +122,17 @@ package crawlingtosea.box2d
 		
 		}
 		
+		public function getBodyByName(s:String):b2Body{
+			for (var b:b2Body = world.GetBodyList(); b; b = b.GetNext())
+			{
+				if(b.GetUserData().name==s)
+				{
+					return b;
+				}
+			}
+			return null;
+		}
+		
 		protected function render(event:Event):void
 		{
 			// TODO Auto-generated method stub
@@ -117,10 +151,27 @@ package crawlingtosea.box2d
 						b.GetUserData().asset.rotation = b.GetAngle() * CSb2CV.RadToDeg;
 						b.ResetMassData();
 					}
+					
+					if(_isForce&&_vec_body.length!=0){
+						
+						for (var i:int=0;i<_vec_body.length-1;i++)
+						{
+							
+							var bd:b2Body=(b2Body)(_vec_body[i]);
+							bd.ApplyForce(_vec_force[i],bd.GetPosition());
+							
+							
+						}
+						world.ClearForces();
+						
+				}
+					
 				}
 			}
+			
+			
+			
 		}		
-		
 		
 	}
 }

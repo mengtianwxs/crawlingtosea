@@ -60,6 +60,8 @@ package crawlingtosea.box2d
 			return b2body;
 		}
 		
+		
+		
 		public function GetAABBWorld(w:int=5):b2Body{
 			if(Config.isInit){
 			var _w:int=w;

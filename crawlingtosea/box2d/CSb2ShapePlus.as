@@ -45,7 +45,7 @@
 			return b2body;
 		}
 		
-		public function Resetb2FixtureByName(s:String="",b2fd:b2FixtureDef=null):void
+		/*public function Resetb2FixtureByName(s:String="",b2fd:b2FixtureDef=null):void
 		{
 			
 			if((s!="")&&(b2fd!=null))
@@ -55,15 +55,15 @@
 					
 					if(b.GetUserData().name==s){
 						
-//						b.GetFixtureList().SetFriction(b2fd.friction);
-//						b.GetFixtureList().SetRestitution(b2fd.restitution);
+					b.GetFixtureList().SetFriction(b2fd.friction);
+						b.GetFixtureList().SetRestitution(b2fd.restitution);
 						b.GetFixtureList().SetDensity(b2fd.density);
-						/*b.GetFixtureList().SetSensor(b2fd.isSensor);
-						b.GetFixtureList().SetFilterData(b2fd.filter);*/
+						b.GetFixtureList().SetSensor(b2fd.isSensor);
+						b.GetFixtureList().SetFilterData(b2fd.filter);
 						b.ResetMassData();
 					}
 				}
 			}
-		}
+		}*/
 	}
 }
