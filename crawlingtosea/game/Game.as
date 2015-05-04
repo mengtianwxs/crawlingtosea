@@ -4,22 +4,27 @@ package crawlingtosea.game
 	import flash.display.Stage;
 	
 	import crawlingtosea.algorithms.astar.Grid;
+	import crawlingtosea.core.c2debug;
 	import crawlingtosea.debug.Config;
 	
 	
-	/**
+	/** 
+	 * 测试类没有公开
 	 * @class Game
 	 * @author mengtianwxs
 	 * @createTime 2013-12-18
 	 */
 	
-	public class Game extends Sprite
+	internal class Game extends Sprite
 	{
 		private var _player:Sprite=null;
 		private var _cellSize:int=20;
 		private var _grid:Grid;
 	    private var _index:int;
 		private var _path:Array;
+		
+		use namespace c2debug;
+		
 		public function Game(rootClass:Object,stage:Stage,frameRate:int=30)
 		{
 			super();
@@ -28,22 +33,22 @@ package crawlingtosea.game
 			
 		}
 
-		public function get cellSize():int
+		c2debug function get cellSize():int
 		{
 			return _cellSize;
 		}
 
-		public function set cellSize(value:int):void
+		c2debug function set cellSize(value:int):void
 		{
 			_cellSize = value;
 		}
 
-		public function get player():Sprite
+		c2debug function get player():Sprite
 		{
 			return _player;
 		}
 
-		public function set player(value:Sprite):void
+		c2debug function set player(value:Sprite):void
 		{
 			_player = value;
 		}

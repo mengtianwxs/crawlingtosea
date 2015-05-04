@@ -11,7 +11,7 @@ package crawlingtosea.freeui
 	import flash.text.TextFormat;
 	import flash.utils.getDefinitionByName;
 	
-	import crawlingtosea.core.C2UI;
+	import crawlingtosea.core.c2ui;
 	import crawlingtosea.debug.Config;
 	import crawlingtosea.debug.Debug;
 	import crawlingtosea.events.UIEvent;
@@ -25,7 +25,7 @@ package crawlingtosea.freeui
 	
 	[Event(name="font_loaded", type="crawlingtosea.events.UIEvent")]
 	
-	public class C2Words extends C2UI
+	public class c2words extends c2ui
 	{
 		private var _swfFontPath:String=null;
 		private var _fontName:String =null;
@@ -49,7 +49,7 @@ package crawlingtosea.freeui
 		 * @param letterSpacing
 		 * 
 		 */		
-		public function C2Words(fontName:String=null,swfFontPath:String=null,fontSize:int=14,colors:uint=0,letterSpacing:int=0)
+		public function c2words(fontName:String=null,swfFontPath:String=null,fontSize:int=14,colors:uint=0,letterSpacing:int=0)
 		{
 			super();
 			_tf=new TextField();
@@ -231,7 +231,7 @@ package crawlingtosea.freeui
 		 * </listing>
 		 * @see #configurateArray()
 		 */		
-		public function configurate(words:C2Words=null):void
+		public function configurate(words:c2words=null):void
 		{
 			this._swfFontPath=words.swfFontPath;
 			this._fontName=words.fontName;
@@ -252,7 +252,7 @@ package crawlingtosea.freeui
 		
 		public function configurateArray(wordsArr:Array=null):void
 		{
-			for each(var g:C2Words in wordsArr)
+			for each(var g:c2words in wordsArr)
 			{
 				g._fontName=this.fontName;
 				g._swfFontPath=this.swfFontPath;

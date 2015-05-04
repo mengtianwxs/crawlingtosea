@@ -1,18 +1,18 @@
 package crawlingtosea.methods
 {
-	import crawlingtosea.core.C2NS_DEBUG;
+	import crawlingtosea.core.c2debug;
 	
 	/**
 	 * @class DoubleDimensionalArray
 	 * @author mengtianwxs
 	 * @createTime 2013-11-29
 	 */
-	use namespace C2NS_DEBUG;
+	use namespace c2debug;
 	
 	public class DoubleDimensionalArray
 	{
 		/*ToDoubleDimensionalArray*/
-		C2NS_DEBUG static function to(data:Array=null,a:int=0,b:int=0):Array
+		c2debug static function to(data:Array=null,a:int=0,b:int=0):Array
 		{
 			var _data:Array=new Array(a);
 			var len:int=data.length;

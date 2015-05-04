@@ -10,9 +10,9 @@ package crawlingtosea.core
 	 * @createTime 2013-3-19
 	 */	
 	
-	public class C2Shape extends Shape
+	public class c2shape extends Shape
 	{
-		public function C2Shape()
+		public function c2shape()
 		{
 			super();
 		}

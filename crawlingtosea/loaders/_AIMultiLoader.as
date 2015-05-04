@@ -10,10 +10,9 @@ package crawlingtosea.loaders
 	import flash.utils.ByteArray;
 	import flash.utils.CompressionAlgorithm;
 	
-	import crawlingtosea.core.C2NS_DEBUG;
+	import crawlingtosea.core.c2debug;
 	import crawlingtosea.debug.Debug;
 	import crawlingtosea.events.LoaderEvent;
-	import crawlingtosea.events.QueueEvent;
 	import crawlingtosea.methods.CheckoutType;
 	import crawlingtosea.methods.GetSuffix;
 	
@@ -27,7 +26,7 @@ package crawlingtosea.loaders
 	[Event(name="ai_multicompleted_textcompleted", type="crawlingtosea.events.LoaderEvent")]
 	[Event(name="completed", type="crawlingtosea.events.QueueEvent")]
 	
-	use namespace C2NS_DEBUG;
+	use namespace c2debug;
 	
 	public class _AIMultiLoader extends EventDispatcher
 	{
@@ -176,7 +175,7 @@ package crawlingtosea.loaders
 		}
 		
 	
-		C2NS_DEBUG function substr(obj:*):String
+		c2debug function substr(obj:*):String
 		{
 			return String(obj).split(" ")[1].substr(0,-1);
 		}

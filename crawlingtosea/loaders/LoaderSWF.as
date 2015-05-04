@@ -10,7 +10,7 @@ package crawlingtosea.loaders
 	import flash.system.ApplicationDomain;
 	import flash.system.LoaderContext;
 	
-	import crawlingtosea.core.C2Loader;
+	import crawlingtosea.core.c2loader;
 	import crawlingtosea.debug.Debug;
 	import crawlingtosea.events.LoaderEvent;
 	
@@ -21,7 +21,7 @@ package crawlingtosea.loaders
 	 * @createTime 2013-3-22
 	 */	
 	
-	public class LoaderSWF extends C2Loader
+	public class LoaderSWF extends c2loader
 	{
 		
 		private var _data:MovieClip;

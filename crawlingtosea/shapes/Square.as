@@ -1,6 +1,6 @@
 package crawlingtosea.shapes
 {
-	import crawlingtosea.core.C2Shape;
+	import crawlingtosea.core.c2shape;
 	
 	
 	/**
@@ -9,7 +9,7 @@ package crawlingtosea.shapes
 	 * @createTime 2013-3-19
 	 */	
 	
-	public class Square extends C2Shape
+	public class Square extends c2shape
 	{
 		
 		private var _colors:uint=0x0;

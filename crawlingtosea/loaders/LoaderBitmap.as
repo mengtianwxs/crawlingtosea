@@ -6,7 +6,7 @@ package crawlingtosea.loaders
 	import flash.events.Event;
 	import flash.net.URLRequest;
 	
-	import crawlingtosea.core.C2Loader;
+	import crawlingtosea.core.c2loader;
 	import crawlingtosea.debug.Config;
 	import crawlingtosea.debug.Debug;
 	import crawlingtosea.events.LoaderEvent;
@@ -18,7 +18,7 @@ package crawlingtosea.loaders
 	 * @createTime 2013-3-22
 	 */	
 	
-	public class LoaderBitmap extends C2Loader
+	public class LoaderBitmap extends c2loader
 	{
 		
 		private var _data:Bitmap;

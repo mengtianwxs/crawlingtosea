@@ -10,10 +10,10 @@ package crawlingtosea.core
 	 * @createTime 2013-3-19
 	 */	
 	
-	public class C2UI extends Sprite
+	public class c2ui extends Sprite
 	{
 		
-		public function C2UI()
+		public function c2ui()
 		{
 			super();
 		}

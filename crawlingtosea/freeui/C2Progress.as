@@ -4,7 +4,8 @@ package crawlingtosea.freeui
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
 	
-	import crawlingtosea.core.C2UI;
+	import crawlingtosea.core.c2ui;
+	import crawlingtosea.events.ProgressEvent;
 	import crawlingtosea.shapes.Square;
 	
 	
@@ -14,7 +15,7 @@ package crawlingtosea.freeui
 	 * @createTime 2013-3-19
 	 */	
 	
-	public class C2Progress extends C2UI
+	public class c2progress extends c2ui
 	{
 		
 		private var counter:uint=0;
@@ -39,7 +40,7 @@ package crawlingtosea.freeui
 		 * @param bgColors
 		 * 
 		 */		
-		public function C2Progress(delay:uint=800,alphas:Number=0.5,size:uint=5,colors:uint=0x7dc3ea,bgColors:uint=0)
+		public function c2progress(delay:uint=800,alphas:Number=0.5,size:uint=5,colors:uint=0x7dc3ea,bgColors:uint=0)
 		{
 			super();
 			_delay=delay;
@@ -101,6 +102,12 @@ package crawlingtosea.freeui
 			
 		}
 		
+		public function setScale(a:Number):void{
+			this.scaleX=a;
+			this.scaleY=a;
+			//this.scaleZ=a;
+		}
+		
 		/**
 		 * 
 		 * @param e
@@ -108,6 +115,7 @@ package crawlingtosea.freeui
 		 */		
 		private function onTimerEvent(e:TimerEvent):void
 		{
+//			dispatchEvent(new ProgressEvent(ProgressEvent.Progress));
 			
 			if (counter==5)
 			{

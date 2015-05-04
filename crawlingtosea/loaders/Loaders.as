@@ -8,7 +8,7 @@ package crawlingtosea.loaders
 	import flash.media.Sound;
 	import flash.utils.getDefinitionByName;
 	
-	import crawlingtosea.core.C2Loader;
+	import crawlingtosea.core.c2loader;
 	import crawlingtosea.events.LoaderEvent;
 	
 	
@@ -31,7 +31,7 @@ package crawlingtosea.loaders
 		private  var assetPath:String=null;
 		private var _asset:Object=new Object();
 		private var _myLoader:Loader=null;
-		private var load:C2Loader=null;
+		private var load:c2loader=null;
 		
 		public function Loaders(assetPath:String,loaderMethod:int,defaultHandler:Function=null)
 		{	

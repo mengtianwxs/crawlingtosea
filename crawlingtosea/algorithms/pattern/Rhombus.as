@@ -2,7 +2,7 @@ package crawlingtosea.algorithms.pattern
 {
 	import flash.text.TextField;
 	
-	import crawlingtosea.core.C2Pattern;
+	import crawlingtosea.core.c2pattern;
 	import crawlingtosea.debug.Config;
 	
 	/**
@@ -11,7 +11,7 @@ package crawlingtosea.algorithms.pattern
 	 * @createTime 2013-4-1
 	 */	
 	
-	public class Rhombus extends C2Pattern
+	public class Rhombus extends c2pattern
 	{
 		private var _distance:uint=0;
 		private var _txt:TextField;

@@ -11,14 +11,14 @@ package crawlingtosea.core
 	
 	[Event(name="completed", type="crawlingtosea.events.LoaderEvent")]
 	
-	public class C2Loader extends EventDispatcher
+	public class c2loader extends EventDispatcher
 	{
 		
 		
 		public var _loader:Loader=new Loader();
 		public var path:String=null;
 		
-		public function C2Loader(path:String)
+		public function c2loader(path:String)
 		{
 		    this.path=path;	
 		}

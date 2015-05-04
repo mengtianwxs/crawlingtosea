@@ -7,9 +7,9 @@ package crawlingtosea.core
 	 * @createTime 2013-4-1
 	 */	
 	
-	public class C2Pattern extends C2UI
+	public class c2pattern extends c2ui
 	{
-		public function C2Pattern()
+		public function c2pattern()
 		{
 			this.mouseChildren=false;
 			this.mouseEnabled=false;

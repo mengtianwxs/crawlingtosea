@@ -6,7 +6,7 @@ package crawlingtosea.loaders
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	
-	import crawlingtosea.core.C2Loader;
+	import crawlingtosea.core.c2loader;
 	import crawlingtosea.debug.Debug;
 	import crawlingtosea.events.LoaderEvent;
 	
@@ -17,7 +17,7 @@ package crawlingtosea.loaders
 	 * @createTime 2013-3-22
 	 */	
 	
-	public class LoaderXML extends C2Loader
+	public class LoaderXML extends c2loader
 	{
 		
 		private var _urlLoader:URLLoader;

@@ -1,6 +1,6 @@
 package crawlingtosea.shapes
 {
-	import crawlingtosea.core.C2Shape;
+	import crawlingtosea.core.c2shape;
 	
 	
 	/**
@@ -9,7 +9,7 @@ package crawlingtosea.shapes
 	 * @createTime 2013-3-19
 	 */	
 	
-	public class Garage extends C2Shape
+	public class Garage extends c2shape
 	{
 		/**
 		 * 颜色 
