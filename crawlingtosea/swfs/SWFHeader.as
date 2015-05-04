@@ -3,6 +3,7 @@ package crawlingtosea.swfs
 	import flash.utils.ByteArray;
 	import flash.utils.Endian;
 	
+	import crawlingtosea.core.c2debug;
 	import crawlingtosea.swfs.core.ISWFD;
 	import crawlingtosea.swfs.core.Tag;
 
@@ -12,7 +13,7 @@ package crawlingtosea.swfs
 	 * mengtianwxs
 	 *2014-2-4
 	 */
-	public class SWFHeader implements ISWFD
+	internal class SWFHeader implements ISWFD
 	{
 		private var _signature:String="";
 		private var _version:int=0;
@@ -21,6 +22,8 @@ package crawlingtosea.swfs
 		private var _frameRate:int=0;
 		private var _frameCount:int=0;
 		
+		use namespace c2debug;
+
 		/**
 		 *Signature byte: 
 		 * “F” indicated uncompressed; 
@@ -28,8 +31,7 @@ package crawlingtosea.swfs
 		 * “Z” indicates compressed using LZMA compression. 
 		 */		
 		
-		public static var FWS:String="465753";
-		
+		internal static var FWS:String="465753";
 		
 		
 		
@@ -42,89 +44,89 @@ package crawlingtosea.swfs
 			  parseSWFData(data);
 		}
 		
-		public function get type():String
+		c2debug function get type():String
 		{
 			return null;
 		}
-		public function set type(vlaue:String):void
+		c2debug function set type(vlaue:String):void
 		{
 			
 		}
 		
-		public function get length():int
+		c2debug function get length():int
 		{
 			return null;
 		}
 		
-		public function set length(value:int):void
+		c2debug function set length(value:int):void
 		{
 			
 		}
-		public function get frameCount():int
+		c2debug function get frameCount():int
 		{
 			return _frameCount;
 		}
 
-		public function set frameCount(value:int):void
+		c2debug function set frameCount(value:int):void
 		{
 			_frameCount = value;
 		}
 
-		public function get frameRate():int
+		c2debug function get frameRate():int
 		{
 			return _frameRate;
 		}
 
-		public function set frameRate(value:int):void
+		c2debug function set frameRate(value:int):void
 		{
 			_frameRate = value;
 		}
 
-		public function get frameSize():RECT
+		c2debug function get frameSize():RECT
 		{
 			return _frameSize;
 		}
 
-		public function set frameSize(value:RECT):void
+		c2debug function set frameSize(value:RECT):void
 		{
 			_frameSize = value;
 		}
 
-		public function get fileLength():int
+		c2debug function get fileLength():int
 		{
 			
 			return _fileLength;
 		}
 
-		public function set fileLength(value:int):void
+		c2debug function set fileLength(value:int):void
 		{
 			_fileLength = value;
 		}
 
-		public function get version():int
+		c2debug function get version():int
 		{
 			return _version;
 		}
 
-		public function set version(value:int):void
+		c2debug function set version(value:int):void
 		{
 			_version = value;
 		}
 
-		public function get signature():String
+		c2debug function get signature():String
 		{
 			
 			return _signature;
 		}
 
-		public function set signature(value:String):void
+		c2debug function set signature(value:String):void
 		{
 			_signature = value;
 		}
 		
 		
 		
-		protected function parseSWFData(data:ByteArray):void
+		c2debug function parseSWFData(data:ByteArray):void
 		{
 			data.position=0;
 		     _signature=data.readUTFBytes(3);  

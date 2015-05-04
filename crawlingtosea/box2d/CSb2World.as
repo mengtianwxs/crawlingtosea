@@ -25,18 +25,18 @@ package crawlingtosea.box2d
 		private var isRegister:Boolean=false;
 		private var isRender:Boolean=false;
 		private var _isRenderSkin:Boolean=false;
-		private var _isForce:Boolean=false;
+		private var _isApplyForce:Boolean=false;
 		private var _vec_body:Vector.<b2Body>=new Vector.<b2Body>();
 		private var _vec_force:Vector.<b2Vec2>=new Vector.<b2Vec2>();
 		private var _vec_bodyname:Vector.<String>=new Vector.<String>();
 		
-		public function CSb2World(_x:Number=0,_y:Number=10)
+		public function CSb2World(_x:Number=0,_y:Number=10,isSleep:Boolean=true)
 		{
 			/*if(getQualifiedClassName(this)=="crawlingtosea.box2d::CWorld"){
 				throw new Error(Debug.Error_CannotInstance);
 			}*/
 		var gravity:b2Vec2=new b2Vec2(_x,_y);
-		world=new b2World(gravity,true);	
+		world=new b2World(gravity,isSleep);	
 		}
 		
 		public  function GetWorld():b2World{
@@ -50,7 +50,7 @@ package crawlingtosea.box2d
 			if(body!=""){
 				var b:b2Body=getBodyByName(body);
 				if(b!=null){
-					_isForce=true;
+					
 					_vec_body.push(b);
 					_vec_bodyname.push(body);
 					_vec_force.push(force);
@@ -65,9 +65,10 @@ package crawlingtosea.box2d
 		}
 		 
 		
-		public function registerAndStartRender(s:Sprite=null,isRenderSkin:Boolean=false):void{
+		public function registerAndStartRender(s:Sprite=null,isRenderSkin:Boolean=false,isApplyForce:Boolean=false):void{
 			registerContainer(s);
 			startRender(isRenderSkin);
+			_isApplyForce=isApplyForce;
 			
 		}
 		public function registerContainer(s:Sprite=null):void
@@ -122,15 +123,36 @@ package crawlingtosea.box2d
 		
 		}
 		
-		public function getBodyByName(s:String):b2Body{
+		public function getBodyByName(s:String):b2Body {
+		
 			for (var b:b2Body = world.GetBodyList(); b; b = b.GetNext())
 			{
-				if(b.GetUserData().name==s)
+				
+				if((b.GetUserData()!=null)&&(b.GetUserData().name==s))
 				{
 					return b;
 				}
 			}
 			return null;
+		}
+		
+		public function drawPath(b:b2Body=null):void
+		{
+			if(b!=null){
+				s.addEventListener(Event.ENTER_FRAME,updatePath);
+			}
+			var p:Shape=new Shape();
+			Config.stage.addChild(p);
+			
+			function updatePath(event:Event):void
+			{
+				// TODO Auto-generated method stub
+				
+				p.graphics.lineStyle(1);
+				p.graphics.drawCircle(b.GetPosition().x*30,b.GetPosition().y*30,2);
+				p.graphics.endFill();
+				
+			}
 		}
 		
 		protected function render(event:Event):void
@@ -152,7 +174,7 @@ package crawlingtosea.box2d
 						b.ResetMassData();
 					}
 					
-					if(_isForce&&_vec_body.length!=0){
+					if(_isApplyForce&&_vec_body.length!=0){
 						
 						for (var i:int=0;i<_vec_body.length-1;i++)
 						{

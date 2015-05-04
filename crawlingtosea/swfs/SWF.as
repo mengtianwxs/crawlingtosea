@@ -2,13 +2,15 @@ package crawlingtosea.swfs
 {
 	import flash.utils.ByteArray;
 	
+	import crawlingtosea.core.c2debug;
+	
 	
 	/**
 	 *
 	 * mengtianwxs
 	 *2014-2-4
 	 */
-	public class SWF 
+	internal class SWF 
 	{
 		private var _data:ByteArray;
 		
@@ -17,25 +19,27 @@ package crawlingtosea.swfs
 			this._data=data;
 		}
 
-		public function get data():ByteArray
+		c2debug function get data():ByteArray
 		{
 			return _data;
 		}
 
-		public function set data(value:ByteArray):void
+		c2debug function set data(value:ByteArray):void
 		{
 			_data = value;
 		}
 		
-		public function prepare():void
+		c2debug function prepare():void
 		{
 			
 		}
 		
-		public function put():void
+		c2debug function put():void
 		{
 			
 		}
+		
+		use namespace c2debug;
 
 	}
 }

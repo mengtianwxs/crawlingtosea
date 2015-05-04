@@ -2,12 +2,14 @@ package crawlingtosea.swfs
 {
 	import flash.utils.ByteArray;
 	
+	import crawlingtosea.core.c2debug;
+	
 	/**
 	 *
 	 * mengtianwxs
 	 *2014-2-4
 	 */
-	public class RECT
+	internal class RECT
 	{
 		private var _Nbits:int=0;
 		private var _Xmin:int=0;
@@ -15,58 +17,60 @@ package crawlingtosea.swfs
 		private var _Ymin:int=0;
 		private var _Ymax:int=0;
 		
+		use namespace c2debug;
+		
 		public function RECT(data:ByteArray)
 		{
 			
 		}
 		
 	
-		public function get Ymax():int
+		c2debug function get Ymax():int
 		{
 			return _Ymax;
 		}
 
-		public function set Ymax(value:int):void
+		c2debug function set Ymax(value:int):void
 		{
 			_Ymax = value;
 		}
 
-		public function get Ymin():int
+		c2debug function get Ymin():int
 		{
 			return _Ymin;
 		}
 
-		public function set Ymin(value:int):void
+		c2debug function set Ymin(value:int):void
 		{
 			_Ymin = value;
 		}
 
-		public function get Xmax():int
+		c2debug function get Xmax():int
 		{
 			return _Xmax;
 		}
 
-		public function set Xmax(value:int):void
+		c2debug function set Xmax(value:int):void
 		{
 			_Xmax = value;
 		}
 
-		public function get Xmin():int
+		c2debug function get Xmin():int
 		{
 			return _Xmin;
 		}
 
-		public function set Xmin(value:int):void
+		c2debug function set Xmin(value:int):void
 		{
 			_Xmin = value;
 		}
 
-		public function get Nbits():int
+		c2debug function get Nbits():int
 		{
 			return _Nbits;
 		}
 
-		public function set Nbits(value:int):void
+		c2debug function set Nbits(value:int):void
 		{
 			_Nbits = value;
 		}

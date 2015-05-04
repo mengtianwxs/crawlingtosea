@@ -12,6 +12,8 @@ package crawlingtosea.debug
 	import flash.ui.ContextMenuItem;
 	import flash.utils.getQualifiedClassName;
 	
+	import crawlingtosea.core.c2debug;
+	
 	/**
 	 * 配置舞台，可以定义一系列参数在RegisterAndInitStage方法中。
 	 * @author mengtianwxs
@@ -149,6 +151,8 @@ package crawlingtosea.debug
 		private static var _methods:Array;
 		
 		public static var isInit:Boolean=false;
+		
+		use namespace c2debug;
 	
 		public function Config()
 		{
@@ -275,7 +279,7 @@ package crawlingtosea.debug
 		 * 
 		 */	
 		
-		public static function ParseAndTraceStage(value:Boolean=true):void
+		c2debug static function ParseAndTraceStage(value:Boolean=true):void
 		{
 		   if(value)
 		   {
