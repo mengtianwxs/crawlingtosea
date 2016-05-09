@@ -3,7 +3,7 @@ package crawlingtosea.algorithms.pattern
 	import flash.text.TextField;
 	
 	import crawlingtosea.core.c2pattern;
-	import crawlingtosea.debug.Config;
+	import crawlingtosea.debug.c2config;
 	
 	/**
 	 * 打印菱形图案算法
@@ -24,7 +24,7 @@ package crawlingtosea.algorithms.pattern
 			this._distance=dis;
 			this._pattern=pattern;
 			_txt=new TextField();
-			_txt.autoSize=Config.TextFieldAutoSize_LEFT;
+			_txt.autoSize=c2config.TextFieldAutoSize_LEFT;
 			_txt.selectable=false;
 			addChild(_txt);
 			drawRhombus();

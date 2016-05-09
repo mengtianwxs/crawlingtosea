@@ -9,7 +9,7 @@
 	import Box2D.Dynamics.b2World;
 	
 	import crawlingtosea.box2d.core.CSb2CV;
-	import crawlingtosea.debug.Config;
+	import crawlingtosea.debug.c2config;
 	import crawlingtosea.debug.Debug;
 	
 	public class CSb2ShapePlus extends CSb2Shape
@@ -27,10 +27,10 @@
 			
 			bodyDef.userData = new Object();
 			bodyDef.userData.name = s;
-			if((asset!=null)&&(asset is Sprite)&&Config.isInit)
+			if((asset!=null)&&(asset is Sprite)&&c2config.isInit)
 			{
 				bodyDef.userData.asset = asset;
-				Config.stage.addChild(bodyDef.userData.asset);
+				c2config.stage.addChild(bodyDef.userData.asset);
 			}else{
 				throw new Error(Debug.Error_DebugConfigIsClosed+"或所引用资源为空");
 			}

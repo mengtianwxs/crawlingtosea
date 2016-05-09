@@ -10,7 +10,7 @@ package crawlingtosea.box2d
 	import Box2D.Dynamics.b2World;
 	
 	import crawlingtosea.box2d.core.CSb2CV;
-	import crawlingtosea.debug.Config;
+	import crawlingtosea.debug.c2config;
 	import crawlingtosea.debug.Debug;
 
 	public class CSb2Shape extends b2Shape
@@ -63,13 +63,13 @@ package crawlingtosea.box2d
 		
 		
 		public function GetAABBWorld(w:int=5):b2Body{
-			if(Config.isInit){
+			if(c2config.isInit){
 			var _w:int=w;
 			var _hw:int=_w/2;
-			var _sw:int=Config.sw;
-			var _sh:int=Config.sh;
-			var _hsw:int=Config.HalfSW;
-			var _hsh:int=Config.HalfSH;
+			var _sw:int=c2config.sw;
+			var _sh:int=c2config.sh;
+			var _hsw:int=c2config.HalfSW;
+			var _hsh:int=c2config.HalfSH;
 		
 			
 			var shapeVec:Vector.<b2PolygonShape>=new Vector.<b2PolygonShape>();

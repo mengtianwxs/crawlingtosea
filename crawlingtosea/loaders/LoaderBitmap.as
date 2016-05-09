@@ -7,7 +7,7 @@ package crawlingtosea.loaders
 	import flash.net.URLRequest;
 	
 	import crawlingtosea.core.c2loader;
-	import crawlingtosea.debug.Config;
+	import crawlingtosea.debug.c2config;
 	import crawlingtosea.debug.Debug;
 	import crawlingtosea.events.LoaderEvent;
 	
@@ -57,8 +57,8 @@ package crawlingtosea.loaders
 		{
 			if(_isFullScreen)
 			{
-				_data.width=Config.sw;
-				_data.height=Config.sh;
+				_data.width=c2config.sw;
+				_data.height=c2config.sh;
 			}
 			return _data as Bitmap;
 		}

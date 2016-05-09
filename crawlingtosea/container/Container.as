@@ -3,7 +3,7 @@ package crawlingtosea.container
 	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
 	
-	import crawlingtosea.debug.Config;
+	import crawlingtosea.debug.c2config;
 	import crawlingtosea.debug.Debug;
 	
 	/**

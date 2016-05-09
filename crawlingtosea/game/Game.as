@@ -5,7 +5,7 @@ package crawlingtosea.game
 	
 	import crawlingtosea.algorithms.astar.Grid;
 	import crawlingtosea.core.c2debug;
-	import crawlingtosea.debug.Config;
+	import crawlingtosea.debug.c2config;
 	
 	
 	/** 
@@ -28,7 +28,7 @@ package crawlingtosea.game
 		public function Game(rootClass:Object,stage:Stage,frameRate:int=30)
 		{
 			super();
-			Config.init(rootClass,stage,frameRate);
+			c2config.init(rootClass,stage,frameRate);
 			
 			
 		}

@@ -13,7 +13,7 @@ package crawlingtosea.box2d
 	import Box2D.Dynamics.b2World;
 	
 	import crawlingtosea.box2d.core.CSb2CV;
-	import crawlingtosea.debug.Config;
+	import crawlingtosea.debug.c2config;
 		
 
 	public class CSb2World
@@ -73,8 +73,8 @@ package crawlingtosea.box2d
 		}
 		public function registerContainer(s:Sprite=null):void
 		{
-			if(s==null&&Config.isInit){
-			   debugSprite=Config.Container;
+			if(s==null&&c2config.isInit){
+			   debugSprite=c2config.Container;
 			}
 			else{
 			   debugSprite=s;
@@ -142,7 +142,7 @@ package crawlingtosea.box2d
 				s.addEventListener(Event.ENTER_FRAME,updatePath);
 			}
 			var p:Shape=new Shape();
-			Config.stage.addChild(p);
+			c2config.stage.addChild(p);
 			
 			function updatePath(event:Event):void
 			{

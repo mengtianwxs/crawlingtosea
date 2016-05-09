@@ -1,5 +1,6 @@
 package crawlingtosea.debug
 {
+	import flash.display.DisplayObjectContainer;
 	import flash.display.FrameLabel;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -20,7 +21,7 @@ package crawlingtosea.debug
 	 * @createTime 2013-3-9
 	 */	
 	
-	public class Config
+	public class c2config
 	{
 		
 		////////////////////////////////////////////////////////////////
@@ -151,10 +152,11 @@ package crawlingtosea.debug
 		private static var _methods:Array;
 		
 		public static var isInit:Boolean=false;
+		public static var isRegisterUIContainer:Boolean=false;
 		
 		use namespace c2debug;
 	
-		public function Config()
+		public function c2config()
 		{
 			if(getQualifiedClassName(this)=="crawlingtosea.debug::Config")
 			{
@@ -231,9 +233,9 @@ package crawlingtosea.debug
 		   
 			_rootClass=rootClass;
 			_stage=stage;
-			_stage.align=Config.StageAlign_TopLeft;
+			_stage.align=c2config.StageAlign_TopLeft;
 			_stage.frameRate=frameRate;
-			_stage.scaleMode=isNoScale?(Config.StageScaleMode_NoScale):(Config.StageScaleMode_ShowAll);
+			_stage.scaleMode=isNoScale?(c2config.StageScaleMode_NoScale):(c2config.StageScaleMode_ShowAll);
 			
 			//当设置为false是默认值,Flash Player 使用 Unicode 解释外部文本文件。
 			System.useCodePage=isUseCodePage;
@@ -254,13 +256,22 @@ package crawlingtosea.debug
 		
 		public static function get Container():Sprite{
 			
-			if(Config)
+			if(c2config)
 			{
 				var s:Sprite=new Sprite();
-				Config.stage.addChild(s);
+				c2config.stage.addChild(s);
 				return s;
 			}
 			return null;
+		}
+		
+		public static function initUIContainer(parent:DisplayObjectContainer=null):void{
+			if(Container){
+				parent.addChild(Container);
+				
+			}
+			
+				
 		}
 		
 		/**

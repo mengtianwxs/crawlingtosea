@@ -12,7 +12,7 @@ package crawlingtosea.freeui
 	import flash.utils.getDefinitionByName;
 	
 	import crawlingtosea.core.c2ui;
-	import crawlingtosea.debug.Config;
+	import crawlingtosea.debug.c2config;
 	import crawlingtosea.debug.Debug;
 	import crawlingtosea.events.UIEvent;
 	
@@ -185,7 +185,7 @@ package crawlingtosea.freeui
 			format.letterSpacing=_letterSpacing;
 			_tf.embedFonts=true;
 			_tf.selectable=false;
-			_tf.autoSize=Config.TextFieldAutoSize_LEFT;
+			_tf.autoSize=c2config.TextFieldAutoSize_LEFT;
 			_tf.defaultTextFormat=format;
 			
 		}

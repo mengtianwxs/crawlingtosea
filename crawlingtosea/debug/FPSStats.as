@@ -29,9 +29,9 @@ package crawlingtosea.debug
 		
 		public function FPSStats(x:Number=10,y:Number=10)
 		{
-			_stage=Config.stage;
+			_stage=c2config.stage;
 			_txt=new TextField();
-			_txt.autoSize=Config.TextFieldAutoSize_LEFT;
+			_txt.autoSize=c2config.TextFieldAutoSize_LEFT;
 			_stage.addChild(_txt);
 			
 			_stage.addEventListener(Event.ENTER_FRAME,onFrames,false,0,true);

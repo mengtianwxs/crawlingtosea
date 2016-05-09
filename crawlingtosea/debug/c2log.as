@@ -1,8 +1,8 @@
 package crawlingtosea.debug
 {
-	public class Log
+	public class c2log
 	{
-		public function Log()
+		public function c2log()
 		{
 		}
 		
